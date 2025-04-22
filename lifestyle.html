@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="Learn English with Ivoxygen's track 'Lifestyle' on SINGLISH.">
+    <title>Lifestyle by Ivoxygen - SINGLISH</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">SINGLISH</div>
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><button id="signInButton" class="sign-in-btn">Sign In</button></li>
+            </ul>
+        </nav>
+        <div class="menu-icon" onclick="toggleMenu()" role="button" aria-label="Toggle navigation menu">☰</div>
+    </header>
+
+    <main class="track-page">
+        <h1>Lifestyle by Ivoxygen</h1>
+        <div class="track-content">
+            <img src="https://github.com/Boneshadow/boneshadow.github.io/raw/main/m1000x1000.jpg" alt="Lifestyle by Ivoxygen cover art" class="track-cover">
+            <div class="spotify-player">
+                <audio id="audio-player" preload="metadata">
+                    <source src="https://github.com/Boneshadow/boneshadow.github.io/raw/main/Lifestyle.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <div class="player-controls">
+                    <button class="control-btn play-pause" aria-label="Play/Pause">
+                        <i class="fas fa-play"></i>
+                        <i class="fas fa-pause"></i>
+                    </button>
+                    <div class="progress-container">
+                        <span class="current-time">0:00</span>
+                        <input type="range" class="progress-bar" value="0" min="0" max="100">
+                        <span class="duration">0:00</span>
+                    </div>
+                    <div class="volume-container">
+                        <i class="fas fa-volume-up volume-icon"></i>
+                        <input type="range" class="volume-bar" value="100" min="0" max="100">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="exercises">
+            <h2>Exercises</h2>
+            <div class="exercise" id="fill-in-the-blanks">
+                <h3>Fill in the Blanks</h3>
+                <p class="instruction">Listen to the song and select the correct words:</p>
+                <div class="question-list">
+                    <div class="question-item">
+                        <span class="question-number">1</span>
+                        <p>Another day another 
+                            <select name="q1-1">
+                                <option value="">Select</option>
+                                <option value="song">A. song</option>
+                                <option value="pill">B. pill</option>
+                                <option value="dream">C. dream</option>
+                                <option value="story">D. story</option>
+                            </select>
+                            I'm rising.
+                        </p>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">2</span>
+                        <p>Sun shines bright but my lifestyle 
+                            <select name="q2-1">
+                                <option value="">Select</option>
+                                <option value="happy">A. happy</option>
+                                <option value="dark">B. dark</option>
+                                <option value="bright">C. bright</option>
+                                <option value="colorful">D. colorful</option>
+                            </select>.
+                        </p>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">3</span>
+                        <p>Could get lost in this 
+                            <select name="q3-1">
+                                <option value="">Select</option>
+                                <option value="world">A. world</option>
+                                <option value="day">B. day</option>
+                                <option value="moment">C. moment</option>
+                                <option value="place">D. place</option>
+                            </select>
+                            forever.
+                        </p>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">4</span>
+                        <p>Hold on to it as it was for 
+                            <select name="q4-1">
+                                <option value="">Select</option>
+                                <option value="time">A. time</option>
+                                <option value="life">B. life</option>
+                                <option value="love">C. love</option>
+                                <option value="future">D. future</option>
+                            </select>.
+                        </p>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">5</span>
+                        <p>Baby, I'm 
+                            <select name="q5-1">
+                                <option value="">Select</option>
+                                <option value="accustomed">A. accustomed</option>
+                                <option value="forced">B. forced</option>
+                                <option value="devoted">C. devoted</option>
+                                <option value="indifferent">D. indifferent</option>
+                            </select>
+                            to this lifestyle.
+                        </p>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">6</span>
+                        <p>Slowly but 
+                            <select name="q6-1">
+                                <option value="">Select</option>
+                                <option value="fast">A. fast</option>
+                                <option value="sure">B. sure</option>
+                                <option value="loud">C. loud</option>
+                                <option value="weak">D. weak</option>
+                            </select>
+                            I'm waiting tomorrow.
+                        </p>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">7</span>
+                        <p>Seeing these 
+                            <select name="q7-1">
+                                <option value="">Select</option>
+                                <option value="places">A. places</option>
+                                <option value="animals">B. animals</option>
+                                <option value="figures">C. figures</option>
+                                <option value="colors">D. colors</option>
+                            </select>
+                            different lifestyles.
+                        </p>
+                    </div>
+                    <div class="question-item">
+                        <span class="question-number">8</span>
+                        <p>Sun shines but I'm waiting for the 
+                            <select name="q8-1">
+                                <option value="">Select</option>
+                                <option value="morning">A. morning</option>
+                                <option value="evening">B. evening</option>
+                                <option value="night">C. night</option>
+                                <option value="day">D. day</option>
+                            </select>
+                            like a real life.
+                        </p>
+                    </div>
+                </div>
+                <button class="check-btn" onclick="checkFillInTheBlanks()">Check Answers</button>
+                <p id="result" class="result-text"></p>
+            </div>
+
+            <div class="exercise" id="vocabulary-match">
+                <h3>Vocabulary Match</h3>
+                <p class="instruction">Match the words from the song with their Russian translations:</p>
+                <div class="question-list">
+                    <div class="question-item vocab-item">
+                        <span class="vocab-word">Life</span>
+                        <select name="v1">
+                            <option value="">Select</option>
+                            <option value="Жизнь">A. Жизнь</option>
+                            <option value="Свет">B. Свет</option>
+                            <option value="Мечта">C. Мечта</option>
+                            <option value="Путь">D. Путь</option>
+                        </select>
+                    </div>
+                    <div class="question-item vocab-item">
+                        <span class="vocab-word">Stars</span>
+                        <select name="v2">
+                            <option value="">Select</option>
+                            <option value="Деньги">A. Деньги</option>
+                            <option value="Звезды">B. Звезды</option>
+                            <option value="Тени">C. Тени</option>
+                            <option value="Горы">D. Горы</option>
+                        </select>
+                    </div>
+                    <div class="question-item vocab-item">
+                        <span class="vocab-word">Burning</span>
+                        <select name="v3">
+                            <option value="">Select</option>
+                            <option value="Падение">A. Падение</option>
+                            <option value="Горение">B. Горение</option>
+                            <option value="Бег">C. Бег</option>
+                            <option value="Танец">D. Танец</option>
+                        </select>
+                    </div>
+                    <div class="question-item vocab-item">
+                        <span class="vocab-word">Void</span>
+                        <select name="v4">
+                            <option value="">Select</option>
+                            <option value="Толпа">A. Толпа</option>
+                            <option value="Звук">B. Звук</option>
+                            <option value="Пустота">C. Пустота</option>
+                            <option value="Время">D. Время</option>
+                        </select>
+                    </div>
+                    <div class="question-item vocab-item">
+                        <span class="vocab-word">Journey</span>
+                        <select name="v5">
+                            <option value="">Select</option>
+                            <option value="Момент">A. Момент</option>
+                            <option value="Путешествие">B. Путешествие</option>
+                            <option value="Стиль">C. Стиль</option>
+                            <option value="Жизнь">D. Жизнь</option>
+                        </select>
+                    </div>
+                    <div class="question-item vocab-item">
+                        <span class="vocab-word">Alive</span>
+                        <select name="v6">
+                            <option value="">Select</option>
+                            <option value="Высокий">A. Высокий</option>
+                            <option value="Живой">B. Живой</option>
+                            <option value="Потерянный">C. Потерянный</option>
+                            <option value="Упавший">D. Упавший</option>
+                        </select>
+                    </div>
+                    <div class="question-item vocab-item">
+                        <span class="vocab-word">Chasing</span>
+                        <select name="v7">
+                            <option value="">Select</option>
+                            <option value="Преследование">A. Преследование</option>
+                            <option value="Поиск">B. Поиск</option>
+                            <option value="Ожидание">C. Ожидание</option>
+                            <option value="Создание">D. Создание</option>
+                        </select>
+                    </div>
+                    <div class="question-item vocab-item">
+                        <span class="vocab-word">Regrets</span>
+                        <select name="v8">
+                            <option value="">Select</option>
+                            <option value="Огни">A. Огни</option>
+                            <option value="Дороги">B. Дороги</option>
+                            <option value="Сожаления">C. Сожаления</option>
+                            <option value="Ночи">D. Ночи</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="check-btn" onclick="checkVocabularyMatch()">Check Answers</button>
+                <p id="vocab-result" class="result-text"></p>
+            </div>
+
+            <div class="exercise" id="vocabulary-match-part2">
+                <h3>Vocabulary Match Part 2</h3>
+                <p class="instruction">Match the words from the song with their definitions by selecting the correct option:</p>
+                <div class="question-list">
+                    <div class="question-item vocab-item">
+                        <span class="vocab-word">Pill</span>
+                        <select name="v2-1">
+                            <option value="">Select</option>
+                            <option value="A small, round fruit">A. A small, round fruit</option>
+                            <option value="A small medicinal tablet">B. A small medicinal tablet</option>
+                            <option value="A small, flat stone">C. A small, flat stone</option>
+                            <option value="A small, round coin">D. A small, round coin</option>
+                        </select>
+                    </div>
+                    <div class="question-item vocab-item">
+                        <span class="vocab-word">Devoted</span>
+                        <select name="v2-2">
+                            <option value="">Select</option>
+                            <option value="Feeling tired or bored">A. Feeling tired or bored</option>
+                            <option value="Giving loyalty or love">B. Giving loyalty or love</option>
+                            <option value="Feeling angry or upset">C. Feeling angry or upset</option>
+                            <option value="Feeling scared or nervous">D. Feeling scared or nervous</option>
+                        </select>
+                    </div>
+                    <div class="question-item vocab-item">
+                        <span class="vocab-word">Figures</span>
+                        <select name="v2-3">
+                            <option value="">Select</option>
+                            <option value="Stories or tales">A. Stories or tales</option>
+                            <option value="Drawings or paintings">B. Drawings or paintings</option>
+                            <option value="Shapes or outlines">C. Shapes or outlines</option>
+                            <option value="Songs or poems">D. Songs or poems</option>
+                        </select>
+                    </div>
+                    <div class="question-item vocab-item">
+                        <span class="vocab-word">Moment</span>
+                        <select name="v2-4">
+                            <option value="">Select</option>
+                            <option value="A long period of time">A. A long period of time</option>
+                            <option value="A short period of time">B. A short period of time</option>
+                            <option value="A place or location">C. A place or location</option>
+                            <option value="A feeling or emotion">D. A feeling or emotion</option>
+                        </select>
+                    </div>
+                    <div class="question-item vocab-item">
+                        <span class="vocab-word">Lifestyle</span>
+                        <select name="v2-5">
+                            <option value="">Select</option>
+                            <option value="A type of food">A. A type of food</option>
+                            <option value="A way of traveling">B. A way of traveling</option>
+                            <option value="A way of living">C. A way of living</option>
+                            <option value="A type of clothing">D. A type of clothing</option>
+                        </select>
+                    </div>
+                    <div class="question-item vocab-item">
+                        <span class="vocab-word">Rising</span>
+                        <select name="v2-6">
+                            <option value="">Select</option>
+                            <option value="Falling down">A. Falling down</option>
+                            <option value="Going up">B. Going up</option>
+                            <option value="Staying still">C. Staying still</option>
+                            <option value="Moving sideways">D. Moving sideways</option>
+                        </select>
+                    </div>
+                    <div class="question-item vocab-item">
+                        <span class="vocab-word">Hiding</span>
+                        <select name="v2-7">
+                            <option value="">Select</option>
+                            <option value="Showing openly">A. Showing openly</option>
+                            <option value="Being visible">B. Being visible</option>
+                            <option value="Concealing oneself">C. Concealing oneself</option>
+                            <option value="Standing out">D. Standing out</option>
+                        </select>
+                    </div>
+                    <div class="question-item vocab-item">
+                        <span class="vocab-word">Tomorrow</span>
+                        <select name="v2-8">
+                            <option value="">Select</option>
+                            <option value="The present day">A. The present day</option>
+                            <option value="The previous day">B. The previous day</option>
+                            <option value="The day after today">C. The day after today</option>
+                            <option value="Any day in the past">D. Any day in the past</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="check-btn" onclick="checkVocabularyMatchPart2()">Check Answers</button>
+                <p id="vocab-result-part2" class="result-text"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 SINGLISH. All rights reserved. Unauthorized copying or reproduction of this content is prohibited.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('nav-menu');
+            const menuIcon = document.querySelector('.menu-icon');
+            menu.classList.toggle('active');
+            menuIcon.classList.toggle('active');
+        }
+
+        // Ключи к заданию Fill in the Blanks
+        const correctAnswersFill = {
+            'q1-1': 'pill',
+            'q2-1': 'dark',
+            'q3-1': 'moment',
+            'q4-1': 'life',
+            'q5-1': 'devoted',
+            'q6-1': 'sure',
+            'q7-1': 'figures',
+            'q8-1': 'night'
+        };
+
+        function checkFillInTheBlanks() {
+            const selects = document.querySelectorAll('#fill-in-the-blanks select');
+            let correctCount = 0;
+            let total = selects.length;
+
+            selects.forEach(select => {
+                const userAnswer = select.value;
+                const correctAnswer = correctAnswersFill[select.name];
+                if (userAnswer === correctAnswer) {
+                    correctCount++;
+                    select.style.backgroundColor = '#d4edda'; // Зеленый для правильных
+                    select.style.color = '#155724'; // Темный текст для контраста
+                } else {
+                    select.style.backgroundColor = '#f8d7da'; // Красный для неправильных
+                    select.style.color = '#721c24'; // Темный текст для контраста
+                }
+            });
+
+            const resultText = `You got ${correctCount} out of ${total} correct!`;
+            const resultElement = document.getElementById('result');
+            resultElement.textContent = resultText;
+            resultElement.style.opacity = '0';
+            setTimeout(() => {
+                resultElement.style.transition = 'opacity 0.5s ease';
+                resultElement.style.opacity = '1';
+            }, 10);
+        }
+
+        // Ключи к заданию Vocabulary Match
+        const correctAnswersVocab = {
+            'v1': 'Жизнь',
+            'v2': 'Звезды',
+            'v3': 'Горение',
+            'v4': 'Пустота',
+            'v5': 'Путешествие',
+            'v6': 'Живой',
+            'v7': 'Преследование',
+            'v8': 'Сожаления'
+        };
+
+        function checkVocabularyMatch() {
+            const selects = document.querySelectorAll('#vocabulary-match select');
+            let correctCount = 0;
+            let total = selects.length;
+
+            selects.forEach(select => {
+                const userAnswer = select.value;
+                const correctAnswer = correctAnswersVocab[select.name];
+                if (userAnswer === correctAnswer) {
+                    correctCount++;
+                    select.style.backgroundColor = '#d4edda'; // Зеленый для правильных
+                    select.style.color = '#155724'; // Темный текст для контраста
+                } else {
+                    select.style.backgroundColor = '#f8d7da'; // Красный для неправильных
+                    select.style.color = '#721c24'; // Темный текст для контраста
+                }
+            });
+
+            const resultText = `You got ${correctCount} out of ${total} correct!`;
+            const resultElement = document.getElementById('vocab-result');
+            resultElement.textContent = resultText;
+            resultElement.style.opacity = '0';
+            setTimeout(() => {
+                resultElement.style.transition = 'opacity 0.5s ease';
+                resultElement.style.opacity = '1';
+            }, 10);
+        }
+
+        // Ключи к заданию Vocabulary Match Part 2
+        const correctAnswersVocabPart2 = {
+            'v2-1': 'A small medicinal tablet',
+            'v2-2': 'Giving loyalty or love',
+            'v2-3': 'Shapes or outlines',
+            'v2-4': 'A short period of time',
+            'v2-5': 'A way of living',
+            'v2-6': 'Going up',
+            'v2-7': 'Concealing oneself',
+            'v2-8': 'The day after today'
+        };
+
+        function checkVocabularyMatchPart2() {
+            const selects = document.querySelectorAll('#vocabulary-match-part2 select');
+            let correctCount = 0;
+            let total = selects.length;
+
+            selects.forEach(select => {
+                const userAnswer = select.value;
+                const correctAnswer = correctAnswersVocabPart2[select.name];
+                if (userAnswer === correctAnswer) {
+                    correctCount++;
+                    select.style.backgroundColor = '#d4edda'; // Зеленый для правильных
+                    select.style.color = '#155724'; // Темный текст для контраста
+                } else {
+                    select.style.backgroundColor = '#f8d7da'; // Красный для неправильных
+                    select.style.color = '#721c24'; // Темный текст для контраста
+                }
+            });
+
+            const resultText = `You got ${correctCount} out of ${total} correct!`;
+            const resultElement = document.getElementById('vocab-result-part2');
+            resultElement.textContent = resultText;
+            resultElement.style.opacity = '0';
+            setTimeout(() => {
+                resultElement.style.transition = 'opacity 0.5s ease';
+                resultElement.style.opacity = '1';
+            }, 10);
+        }
+
+        // Управление медиаплеером
+        const audio = document.getElementById('audio-player');
+        const playPauseBtn = document.querySelector('.play-pause');
+        const progressBar = document.querySelector('.progress-bar');
+        const volumeBar = document.querySelector('.volume-bar');
+        const currentTimeDisplay = document.querySelector('.current-time');
+        const durationDisplay = document.querySelector('.duration');
+
+        // Инициализация плеера
+        audio.addEventListener('loadedmetadata', () => {
+            progressBar.max = audio.duration;
+            durationDisplay.textContent = formatTime(audio.duration);
+        });
+
+        // Play/Pause
+        playPauseBtn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                playPauseBtn.classList.add('playing');
+            } else {
+                audio.pause();
+                playPauseBtn.classList.remove('playing');
+            }
+        });
+
+        // Обновление прогресс-бара
+        audio.addEventListener('timeupdate', () => {
+            progressBar.value = audio.currentTime;
+            currentTimeDisplay.textContent = formatTime(audio.currentTime);
+            const progressPercent = (audio.currentTime / audio.duration) * 100;
+            progressBar.style.setProperty('--progress', `${progressPercent}%`);
+        });
+
+        // Перемотка
+        progressBar.addEventListener('input', () => {
+            audio.currentTime = progressBar.value;
+        });
+
+        // Громкость
+        volumeBar.addEventListener('input', () => {
+            audio.volume = volumeBar.value / 100;
+            const volumePercent = volumeBar.value;
+            volumeBar.style.setProperty('--volume', `${volumePercent}%`);
+        });
+
+        // Форматирование времени
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+        }
+    </script>
+    <script type="module">
+        import { signInWithGoogle, signOut, isUserSignedIn, getCurrentUser } from './firebase.js';
+
+        const signInButton = document.getElementById('signInButton');
+        
+        // Update button text and style based on auth state
+        function updateAuthUI() {
+            if (isUserSignedIn()) {
+                const user = getCurrentUser();
+                signInButton.textContent = 'Sign Out';
+                signInButton.classList.add('signed-in');
+            } else {
+                signInButton.textContent = 'Sign In';
+                signInButton.classList.remove('signed-in');
+            }
+        }
+
+        // Handle sign in/out button click
+        signInButton.addEventListener('click', async () => {
+            try {
+                if (isUserSignedIn()) {
+                    await signOut();
+                } else {
+                    await signInWithGoogle();
+                }
+                updateAuthUI();
+            } catch (error) {
+                console.error('Authentication error:', error);
+            }
+        });
+
+        // Initial UI update
+        updateAuthUI();
+    </script>
+    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'92b002b9db62bd37',t:'MTc0Mzc2MTM3MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'92b0728e1d57bd59',t:'MTc0Mzc2NTk1MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'92b1362add16bca7',t:'MTc0Mzc3Mzk2NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body>
+</html>

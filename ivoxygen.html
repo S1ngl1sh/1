@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="Explore Ivoxygen's tracks on SINGLISH to learn English through music.">
+    <title>Ivoxygen Tracks - SINGLISH</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">SINGLISH</div>
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><button id="signInButton" class="sign-in-btn">Sign In</button></li>
+            </ul>
+        </nav>
+        <div class="menu-icon" onclick="toggleMenu()" role="button" aria-label="Toggle navigation menu">☰</div>
+    </header>
+
+    <main class="tracks-main">
+        <h1>Ivoxygen Tracks</h1>
+        <section class="track-list">
+            <h2>Available Tracks</h2>
+            <ul>
+                <li>
+                    <div class="track-item">
+                        <a href="skin.html" class="track-title">Skin</a>
+                        <div class="social-icons">
+                            <a href="https://soundcloud.com/ivoxxxygen/skin-1" target="_blank" rel="noopener noreferrer" aria-label="Skin on SoundCloud">
+                                <i class="fab fa-soundcloud"></i>
+                            </a>
+                            <a href="https://www.youtube.com/watch?v=ku8ZbjgVtVU" target="_blank" rel="noopener noreferrer" aria-label="Skin on YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="https://music.apple.com/us/song/skin/1641054238" target="_blank" rel="noopener noreferrer" aria-label="Skin on Apple Music">
+                                <i class="fab fa-apple"></i>
+                            </a>
+                            <a href="https://open.spotify.com/track/6uGiIWcwnl6GZmL5fKSdGU?si=4b0cffd09c644e7e" target="_blank" rel="noopener noreferrer" aria-label="Skin on Spotify">
+                                <i class="fab fa-spotify"></i>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="track-item">
+                        <a href="lifestyle.html" class="track-title">Lifestyle</a>
+                        <div class="social-icons">
+                            <a href="https://soundcloud.com/ivoxxxygen/lifestyle-1" target="_blank" rel="noopener noreferrer" aria-label="Lifestyle on SoundCloud">
+                                <i class="fab fa-soundcloud"></i>
+                            </a>
+                            <a href="https://www.youtube.com/watch?v=JXA97H2rB4A" target="_blank" rel="noopener noreferrer" aria-label="Lifestyle on YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="https://music.apple.com/us/song/lifestyle/1790316782" target="_blank" rel="noopener noreferrer" aria-label="Lifestyle on Apple Music">
+                                <i class="fab fa-apple"></i>
+                            </a>
+                            <a href="https://open.spotify.com/track/3tw5smQGfpOSUr9fndQs8h?si=4fc9becf4eff482d&nd=1&dlsi=067bf5ffe4374746" target="_blank" rel="noopener noreferrer" aria-label="Lifestyle on Spotify">
+                                <i class="fab fa-spotify"></i>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <p class="note">More tracks coming soon!</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 SINGLISH. All rights reserved. Unauthorized copying or reproduction of this content is prohibited.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('nav-menu');
+            const menuIcon = document.querySelector('.menu-icon');
+            menu.classList.toggle('active');
+            menuIcon.classList.toggle('active');
+        }
+    </script>
+    <script type="module">
+        import { signInWithGoogle, signOut, isUserSignedIn, getCurrentUser } from './firebase.js';
+
+        const signInButton = document.getElementById('signInButton');
+        
+        // Update button text and style based on auth state
+        function updateAuthUI() {
+            if (isUserSignedIn()) {
+                const user = getCurrentUser();
+                signInButton.textContent = 'Sign Out';
+                signInButton.classList.add('signed-in');
+            } else {
+                signInButton.textContent = 'Sign In';
+                signInButton.classList.remove('signed-in');
+            }
+        }
+
+        // Handle sign in/out button click
+        signInButton.addEventListener('click', async () => {
+            try {
+                if (isUserSignedIn()) {
+                    await signOut();
+                } else {
+                    await signInWithGoogle();
+                }
+                updateAuthUI();
+            } catch (error) {
+                console.error('Authentication error:', error);
+            }
+        });
+
+        // Initial UI update
+        updateAuthUI();
+    </script>
+    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'92b002b9db62bd37',t:'MTc0Mzc2MTM3MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'92b0728e1d57bd59',t:'MTc0Mzc2NTk1MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body>
+</html>
