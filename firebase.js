@@ -1,6 +1,6 @@
 // Import Firebase modules
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js';
-import { getAuth, GoogleAuthProvider, signInWithPopup, setPersistence, browserLocalPersistence } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
+import { getAuth, GoogleAuthProvider, signInWithPopup, setPersistence, browserLocalPersistence, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
 
 // Firebase configuration
 const firebaseConfig = {
@@ -74,4 +74,25 @@ export function getCurrentUser() {
     const user = auth.currentUser;
     console.log('Current user:', user);
     return user;
-} 
+}
+
+// Add auth state change listener
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        console.log('User is signed in:', user);
+        // Update UI to show signed-in state
+        const signInBtn = document.querySelector('.sign-in-btn');
+        if (signInBtn) {
+            signInBtn.textContent = 'Sign Out';
+            signInBtn.classList.add('signed-in');
+        }
+    } else {
+        console.log('User is signed out');
+        // Update UI to show signed-out state
+        const signInBtn = document.querySelector('.sign-in-btn');
+        if (signInBtn) {
+            signInBtn.textContent = 'Sign In';
+            signInBtn.classList.remove('signed-in');
+        }
+    }
+}); 

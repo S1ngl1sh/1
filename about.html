@@ -102,6 +102,9 @@
             }
         }
 
+        // Update UI on page load
+        updateAuthUI();
+
         // Handle sign in/out button click
         signInButton.addEventListener('click', async () => {
             try {
@@ -115,9 +118,6 @@
                 console.error('Authentication error:', error);
             }
         });
-
-        // Initial UI update
-        updateAuthUI();
     </script>
 </body>
 </html>
