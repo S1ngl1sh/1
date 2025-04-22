@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="Get in touch with SINGLISH - Learn English through music with interactive lessons.">
+    <title>Contact SINGLISH</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">SINGLISH</div>
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><button id="signInButton" class="sign-in-btn">Sign In</button></li>
+            </ul>
+        </nav>
+        <div class="menu-icon" onclick="toggleMenu()" role="button" aria-label="Toggle navigation menu">☰</div>
+    </header>
+
+    <main>
+        <h1>Contact Us</h1>
+        <p>We're excited to connect with you! Reach out to us through your preferred platform below.</p>
+        <div class="social-links">
+            <a href="/cdn-cgi/l/email-protection#6c1f191c1c031e182c1f05020b00051f04420f0301" title="Email us" aria-label="Send an email to SINGLISH support"><i class="fas fa-envelope"></i></a>
+            <a href="https://twitter.com/SINGLISH_edu" target="_blank" title="Follow us on Twitter" aria-label="Visit SINGLISH on Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://discord.gg/SINGLISH" target="_blank" title="Join our Discord" aria-label="Join the SINGLISH Discord community"><i class="fab fa-discord"></i></a>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 SINGLISH. All rights reserved. Unauthorized copying or reproduction of this content is prohibited.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('nav-menu');
+            const menuIcon = document.querySelector('.menu-icon');
+            menu.classList.toggle('active');
+            menuIcon.classList.toggle('active');
+        }
+    </script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script type="module">
+        import { signInWithGoogle, signOut, isUserSignedIn, getCurrentUser } from './firebase.js';
+
+        const signInButton = document.getElementById('signInButton');
+        
+        // Update button text and style based on auth state
+        function updateAuthUI() {
+            if (isUserSignedIn()) {
+                const user = getCurrentUser();
+                signInButton.textContent = 'Sign Out';
+                signInButton.classList.add('signed-in');
+            } else {
+                signInButton.textContent = 'Sign In';
+                signInButton.classList.remove('signed-in');
+            }
+        }
+
+        // Update UI on page load
+        updateAuthUI();
+
+        // Handle sign in/out button click
+        signInButton.addEventListener('click', async () => {
+            try {
+                if (isUserSignedIn()) {
+                    await signOut();
+                } else {
+                    await signInWithGoogle();
+                }
+                updateAuthUI();
+            } catch (error) {
+                console.error('Authentication error:', error);
+            }
+        });
+    </script>
+</body>
+</html>
